@@ -9,47 +9,36 @@ inputBox.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     // Create a new list item
     const listItem = document.createElement("li");
-    // // Create the paragraph
+    // // Create paragraph in list item
     const paragraph = document.createElement("p");
     // Set task text in paragraph
     paragraph.textContent = inputBox.value;
-    // Add the item to the list if string isn't empty and add till task number is 7 max
+    // Add the item to the list if string isn't empty and add till task number is 6 max
     if (inputBox.value && inputBox.value != " ") {
-      if (taskList.childElementCount <= 6) {
-        // To add list item:
-        taskList.appendChild(listItem);
+      // To add list item:
+      taskList.appendChild(listItem);
 
-        // Append the paragraph to the list item
-        paragraph.classList.add("para");
-        listItem.appendChild(paragraph);
-
-        // Append the list item to the task list
-        //document.getElementById("taskList").appendChild(listItem);
-        //
-        //
-        // To add button delete tasks
-        const btn = document.createElement("button");
-        btn.textContent = "✖";
-        btn.classList.add("delete-btn"); // Add a class to the button for styling and identification
-        listItem.appendChild(btn);
-        //
-        //
-        // Add checkbox for the tasks:
-        const btnDone = document.createElement("button");
-        btnDone.textContent = "✔";
-        btnDone.classList.add("done-btn"); // Add a class to the button for styling and identification
-        listItem.appendChild(btnDone);
-        //
-        //
-        //
-      } else if (inputBox.value && taskList.childElementCount >= 6) {
-        let currentHeight = parseInt(window.getComputedStyle(box).height);
-        box.style.height = currentHeight + 75 + "px";
-        taskList.appendChild(listItem);
-      }
-    }
-
-    // Clear the input field
+      // Append the paragraph to the list item
+      paragraph.classList.add("para");
+      listItem.appendChild(paragraph);
+      //
+      //
+      // To add delete button
+      const btn = document.createElement("button");
+      btn.textContent = "✖";
+      btn.classList.add("delete-btn"); // Add a class to the button for styling and identification
+      listItem.appendChild(btn);
+      //
+      //
+      // Add checkbox for the tasks:
+      const btnDone = document.createElement("input");
+      btnDone.type = "checkbox";
+      btnDone.classList.add("done-btn"); // Add a class to the button for styling and identification
+      listItem.appendChild(btnDone);
+      //
+      //
+      //
+    } // Clear the input field
     inputBox.value = "";
   }
 });

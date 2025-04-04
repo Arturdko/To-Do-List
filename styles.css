@@ -32,7 +32,8 @@ body {
   border: 1px solid black;
   border-radius: 50px;
   width: 550px;
-  height: 650px;
+  height: 600px;
+  overflow-y: auto;
   background-color: #161b25;
   padding: 30px 50px;
   border: none;
@@ -89,14 +90,37 @@ button {
 
 .done-btn {
   order: -1;
-  color: buttonface;
-  align-self: start;
+  align-self: center;
 }
-.done-btn:hover {
-  color: #155263;
+
+.done-btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background-color: #eee;
+  border: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.done-btn:checked {
+  background-color: #4caf50;
+  color: #eee;
+  border-color: #4caf50;
 }
 
 .task-done {
   text-decoration: line-through;
   color: grey;
+}
+
+.hidden {
+  display: none;
+}
+
+.box::-webkit-scrollbar {
+  width: 0px;
 }
