@@ -58,6 +58,7 @@ taskList.addEventListener("click", function (event) {
     const listItem = event.target.closest("li");
     const taskParagrapf = listItem.querySelector(".para");
     // Add a class to mark the task as done
-    taskParagrapf.classList.add("task-done");
+    taskParagrapf.classList.toggle("task-done");
+    listItem.classList.toggle("li-done");
   }
 });
